@@ -89,6 +89,8 @@ IIe Connector   Col/Row   Shift Register Input  Notes
 
 #### Shift register to Teensy 2.0
 
+Follows DIP-8 package: http://www.ti.com/lit/ds/symlink/sn74ls165a.pdf
+
 ```
 Teensy 2.0 Pin    Shift Register Pin
 
@@ -100,7 +102,12 @@ Teensy 2.0 Pin    Shift Register Pin
 GND               8:  GND
 ```
 
-Follows DIP-8 package: http://www.ti.com/lit/ds/symlink/sn74ls165a.pdf
+##### Possible improvement
+
+`SH/LD` is always pulled low at the same time as `CLK INH` is pulled high. That
+means `CLK INH` could be driven from the same pin as `SH/LD` using a
+single-transistor NOT gate. This would free another pin for an extra LED or
+something.
 
 #### Other Pins
 
